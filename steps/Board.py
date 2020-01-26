@@ -22,10 +22,10 @@ def step_impl(context):
 
 @then('should return a "{200}" status code as response')
 def step_impl(context, status_code_200):
-    assert context.board.get_response().status_code == status_code_200
+    assert context.board.get_response().status_code == 200
 
 
-@step('sets a DELETE request to "{url}"')
+@step('sets a DELETE request to "{url_delete}"')
 def step_impl(context, url_delete):
     url = url_delete + context.board.get_response().json()['id']
     context.board.set_url(url)
